@@ -1,0 +1,61 @@
+"Make directories"
+	mkdir nameOfDirectorie 
+"Alterar permissoes"
+	chmod u+x 	
+
+"Importar funcoes para um script"
+	. /path/to/functions #atenção ao espaço.
+	source /path/to/functions
+	$include /path/to/functions
+"Mostrar data"
+	$date
+"Mostrar PC utilizado"
+	$HOSTNAME
+"Mostrar utilizador"
+	$USER
+"Verificar se é um numero inteiro"
+	$v = 101
+	$if [[$v __ ^[0-9]+$ ]]
+	$if [[$v __ ^[1-9][0-9]*$ ]]  "so para nao comecar por 1"
+	"diferenca entre '+' e '*' "
+		'+' 1 repeticao ou mais
+		'*' 0 repeticoes"A ou mais
+"Arrays"
+	$an[0] = 45
+	$echo $[an[0]]
+	>> 45	
+	$an[1] = abc
+	$echo $[an[1]]
+	>> abc	
+	$echo $[an[*]]  "ou"	$echo $[an[@]]
+	>>45 abc	
+	$echo $[# an[0]]
+	>>2
+	$echo $[[! an[@]]
+	>>0 1
+	
+	$b[1] = 100
+	$b[8] = sop
+	$echo ${#b[@]}
+	>> 2
+	$echo $[! b[#]]
+	>> 1 8
+
+	$d = (23 44 78)
+	$echo ${d[1]}
+	44
+	$ for i n $(seq 0 2)
+	do
+		echo ${d[i]}
+	done
+
+	"ou"
+	
+	$ for j in ${! d[@]}
+	do
+		echo ${d[i]}
+	done
+	
+	>>23
+	>>44
+	>>78
